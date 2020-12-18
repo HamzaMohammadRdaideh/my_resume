@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+{% block title %}Add Quote{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container">
+    <div class="jumbotron jumbotron mt-4">
+        <center>
+            <h1> Add-Quote </h1>
+        </center>
+        <hr>
+        <div>
+            <!-- add form -->
+            <form method="POST" action="/add_quote" class="form-group">
+                <!-- input for first value -->
+                <div>
+                    <label for="number1"> Add Quote:</label> <br>
+                    <input type="text" id="quote" name="new_quote" placeholder="Enter new quote" required=""style="width:60%">
+                        <hr>
+
+                </div>
+                <!-- input for second value -->
+                <div>
+                    <label for="number2">Quote author:</label> <br>
+                    <input type="text" id="auther" name="new_author" placeholder="Enter quote author" required=""
+                        style="width:60%">
+                </div>
+                <hr>
+                <!-- submit button -->
+                <div>
+                    <button type="submit">submit</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

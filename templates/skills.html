@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+{% block title %}Skills{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron jumbotron mt-4">
+        <center> <i class="fas fa-star"></i>
+            <h1>SKILLS </h1>
+        </center>
+    </div>
+    <div class="jumbotron">
+
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">University</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in me.skills%}
+                <tr>
+
+
+                    <th scope="row">{{row.number}}</th>
+                    <!-- <th scope="col">1</th> -->
+                    <td>{{row.course}}</td>
+                    <td>{{row.year}}</td>
+                    <td>{{row.uni}}</td>
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+{% endblock %}

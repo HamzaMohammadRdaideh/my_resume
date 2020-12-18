@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% block title %}Favourite{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron jumbotron mt-4">
+        <center> <h1>Delete-Quote</h1></center>
+        <hr>
+        <div>
+            <!-- add form -->
+            <form method="POST" action="/del_quote" class="form-group">
+                <div>
+                    <h3><b>Chose a quote to delete</b></h3>
+                    <br>
+                    <hr>
+                    {% for my_quote in me.favourite_quotes %}
+                    <blockquote>
+                        <h4>{{loop.index -1}} - {{my_quote.quote}} </h4><h4> * Author : {{my_quote.author}} </h4>
+                    </blockquote>
+                    {% endfor%}
+                    <br>
+
+<hr>
+                    <div>
+                        <h3>Delete-quote</h3>
+                        <label for="number1">Quote number here:</label>
+                        <br>
+                        <input type="number" id="quote" name="quote_number" placeholder="Enter quote number to delete"
+                            required="" style="width:60%">
+                    </div>
+                    
+                        <br>
+                    <button type="submit">submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

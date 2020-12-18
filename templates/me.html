@@ -1,0 +1,58 @@
+{% extends 'home.html' %}
+{% block title %}Me{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron jumbotron mt-4">
+
+
+
+        <center>
+            <p>
+            <h2> <i class="fas fa-user"></i> - {{me.description}}</h2>
+            </p>
+        </center>
+
+        <div>
+            <div class="text-center">
+                <img src="{{pic}}" class="rounded-circle" width="500px" alt="...">
+            </div>
+            <!-- <p><a href = "mailto:{{me.email}}">Email</a></p>         -->
+
+        </div>
+    </div>
+</div>
+<center>
+<div class="jumbotron">
+
+    
+        <h5>
+
+            <!-- <button type="button" class="btn btn-fb"
+                onclick="document.location='https://web.facebook.com/hamza.alradaideh' "><i
+                    class="fab fa-facebook-f pr-1"></i> Facebook </button>
+            <button type="button" class="btn btn-tw"
+                onclick="document.location= 'https://twitter.com/Hamza11289384?s=09' "> <i
+                    class="fab fa-twitter pr-1"></i> Twitter</button>
+            <button type="button" class="btn btn-li"
+                onclick="document.location= 'https://www.linkedin.com/in/hamza-rdaideh-b072381b7/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BLJ2Z8xi8Q8KUmcciPYWuMA%3D%3D' "><i
+                    class="fab fa-linkedin-in pr-1"></i> Linkedin</button>
+            <button type="button" class="btn btn-git"
+                onclick="document.location='https://github.com/HamzaMohammadRdaideh' "><i
+                    class="fab fa-github pr-1"></i> Github</button> -->
+
+
+
+            {% for social in social_links %}  
+            
+            <a href="{{social.url}}" class="btn btn-primary " target="_blank" type="button" role="button"> {{social.site}} </a> 
+
+            {% endfor %}
+
+        </h5>
+</div>
+</center>
+{% endblock %}

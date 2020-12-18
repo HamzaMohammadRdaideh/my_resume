@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{% block title %}Favourite{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron jumbotron mt-4">
+
+
+    <h1><b>Quote of the day</b></h1>
+    <br>
+    {% for my_quote in me.favourite_quotes%}
+    <blockquote>
+      <h3>{{my_quote.quote}} </h3>
+      <h4> * Author : {{my_quote.author}} </h4>
+      <hr>
+    </blockquote>
+    {% endfor%}
+    <br>
+    <br>
+
+    
+    <a href="{{url_for('add_quote')}}" class="btn btn-primary " target="_blank" type="button" role="button">   Add Quotes </a> 
+    <a href="{{url_for('del_quote')}}" class="btn btn-primary " target="_blank" type="button" role="button"> Delete Quotes </a> 
+
+
+  </div>
+</div>
+
+{% endblock %}

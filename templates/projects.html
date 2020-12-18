@@ -1,0 +1,67 @@
+{% extends 'home.html' %}
+{% block title %}Project{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron jumbotron mt-4">
+        <center>
+            <h1>
+                <p> <i class="fas fa-project-diagram"></i> Projects </p>
+            </h1>
+        </center>
+
+
+        {% for project in me.projects %}
+
+        <h2><b>-{{project.name}} </b></h2>
+        <h3> {{project.description}} :</h3>
+
+        <ol>
+            {% for tag in project.tags %}
+            <li>
+                <h4> {{tag}}</h4>
+            </li>
+            {% endfor %}
+        </ol>
+        <hr>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="jumbotron">
+        <div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="../static/resume/image/tic_tac_toe.png" height="450px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title " style="text-align: center;">TIC-TAC-TOE GAME</h5>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/resume/image/battle.jpg" height="450px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">BATTLE GAME</h5>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/resume/image/free.webp" height="450px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">RESUME</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

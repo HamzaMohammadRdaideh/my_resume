@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+
+  <!-- page title -->
+  <title>{% block title %}Home{% endblock %}</title>
+
+  <!-- styles block -->
+  {% block styles %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+
+
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <link rel="stylesheet" href="{{ url_for('static' , filename = 'resume/css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static' , filename = 'resume/bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static' , filename = 'resume/icon/font-awesome.min.css') }}">
+
+
+  {% endblock %}
+
+
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{url_for ('homepage')}}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+              <a class="nav-link" href="{{url_for ('homepage')}}">Home <span class="sr-only"></span></a>
+            </li> -->
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for ('me_html')}}">Me</a>
+        </li>
+
+
+        <a class="nav-link" href="{{url_for ('project_html')}}">Projects</a>
+
+        <a class="nav-link" href="{{url_for ('skill_html')}}">Skills</a>
+
+        <a class="nav-link" href="{{url_for ('favourite_html')}}">Favourite quotes</a>
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+  {% block content %}
+  <div class="container">
+    <div class="jumbotron mt-4">
+
+      <h2>
+        <li class="list-group-item list-group-item-dark">
+          <p style="text-align: center;"> Resume APP </p>
+        </li>
+        <div class="list-group">
+          <a href="{{url_for ('me_html')}}" class="list-group-item list-group-item-action">
+            <p style="text-align: center;"> <i class="fas fa-user"></i> ME </p>
+          </a>
+          <a href="{{url_for ('skill_html')}}" class="list-group-item list-group-item-action">
+            <p style="text-align: center;"><i class="fas fa-star"></i> SKILLS </p>
+          </a>
+          <a href="{{url_for ('project_html')}}" class="list-group-item list-group-item-action">
+            <p style="text-align: center;"> <i class="fas fa-project-diagram"></i> PROJECTS </p>
+          </a>
+          <a href="{{url_for ('favourite_html')}}" class="list-group-item list-group-item-action">
+            <p style="text-align: center;"><i class="fas fa-download"></i> FAVOURITE </p>
+          </a>
+
+        </div>
+      </h2>
+    </div>
+  </div>
+
+
+  <div class="jumbotron">
+
+    <center>
+      <h2>
+
+        <button type="button" class="btn btn-fb"
+          onclick="document.location='#' "><i
+            class="fab fa-facebook-f pr-1"></i> Facebook </button>
+        <button type="button" class="btn btn-tw" onclick="document.location= '#' ">
+          <i class="fab fa-twitter pr-1"></i> Twitter</button>
+        <button type="button" class="btn btn-li"
+          onclick="document.location= '#' "><i
+            class="fab fa-linkedin-in pr-1"></i> Linkedin</button>
+        <button type="button" class="btn btn-git"
+          onclick="document.location='#' "><i class="fab fa-github pr-1"></i>
+          Github</button>
+
+      </h2>
+    </center>
+  </div>
+  {% endblock %}
+
+
+
+
+
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the upcoming
+            programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code
+            wants to be simple. We will help programmers build up concepts in different programming languages that
+            include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="#">C</a></li>
+            <li><a href="#">UI Design</a></li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">Android</a></li>
+            <li><a href="#">Templates</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+            <a href="#">RDH</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  {% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+  <script src="../static/resume/icons/fontawosme-all.min.js"></script>
+  {% endblock %}
+</body>
+
+</html>
